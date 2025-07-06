@@ -1,117 +1,137 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site em Manutenção</title>
-    <style>
-        body {
-            font-family: 'Times New Roman', Times,serif;
-            background-color: gray;
-            color: #333;
-            text-align: center;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            line-height: 1.6;
-        }
-        
-        .maintenance-container {
-            background-color: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            max-width: 600px;
-            width: 90%;
-        }
-        
-        h1 {
-            color: #e74c3c;
-            margin-bottom: 20px;
-        }
-        
-        .icon {
-            font-size: 60px;
-            color: #e74c3c;
-            margin-bottom: 20px;
-        }
-        
-        p {
-            margin-bottom: 25px;
-            font-size: 18px;
-        }
-        
-        .contact {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-        }
-        
-        .social-links {
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            margin: 0 10px;
-            color: #3498db;
-            text-decoration: none;
-            font-size: 20px;
-        }
-        
-        .countdown {
-            margin: 30px 0;
-            font-size: 24px;
-            font-weight: bold;
-            color: #e74c3c;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Site em Manutenção</title>
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/189/189755.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      line-height: 1.6;
+    }
+
+    .maintenance-container {
+      background-color: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: 90%;
+    }
+
+    h1 {
+      color: #e74c3c;
+      margin-bottom: 20px;
+    }
+
+    .icon {
+      font-size: 60px;
+      color: #e74c3c;
+      margin-bottom: 20px;
+      animation: spin 6s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    p {
+      margin-bottom: 25px;
+      font-size: 18px;
+    }
+
+    .contact {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+
+    .social-links {
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      margin: 0 10px;
+      color: #3498db;
+      text-decoration: none;
+      font-size: 20px;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #1d6fa5;
+    }
+
+    .countdown {
+      margin: 30px 0;
+      font-size: 24px;
+      font-weight: bold;
+      color: #e74c3c;
+    }
+  </style>
 </head>
 <body>
-    <div class="maintenance-container">
-        <div class="icon">🔧</div>
-        <h1>Site em Manutenção</h1>
-        <p>Estamos trabalhando para melhorar sua experiência. Pedimos desculpas pelo inconveniente e agradecemos sua paciência.</p>
-        
-        <div class="countdown" id="countdown">
-            Volto em breve...
-        </div>
-        
-        <p>Enquanto isso, você pode nos seguir nas redes sociais para atualizações:</p>
-        
-        <div class="social-links">
-            <a href="#" target="_blank">Linkedin</a>
-            <a href="#" target="_blank">Instagram</a>
-            <a href="#" target="_blank">Github</a>
-        </div>
-        
-        <div class="contact">
-            <p>Para emergências, entre em contato:</p>
-            <p><strong>Email:</strong> @<br>
-            <strong>Telefone:</strong> (00) 12345678</p>
-        </div>
+  <div class="maintenance-container">
+    <div class="icon">🔧</div>
+    <h1>Site em Manutenção</h1>
+    <p>Estamos trabalhando para melhorar sua experiência. Pedimos desculpas pelo inconveniente e agradecemos sua paciência.</p>
+
+    <div class="countdown" id="countdown">Calculando retorno...</div>
+
+    <p>Enquanto isso, você pode nos seguir nas redes sociais para atualizações:</p>
+
+    <div class="social-links">
+      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+      <a href="https://instagram.com" target="_blank">Instagram</a>
+      <a href="https://github.com" target="_blank">GitHub</a>
     </div>
 
-    <script>
-        // Exemplo simples de contador regressivo (opcional)
-        function updateCountdown() {
-            // Defina a data de retorno esperada
-            const returnDate = new Date('2025-12-31T00:00:00').getTime();
-            const now = new Date().getTime();
-            const distance = returnDate - now;
-            
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            
-            document.getElementById("countdown").innerHTML = `Data provavel: ${days}d ${hours}h ${minutes}m`;
-        }
-        
-        // Atualiza a cada minuto
-        updateCountdown();
-        setInterval(updateCountdown, 60000);
-    </script>
+    <div class="contact">
+      <p>Para emergências, entre em contato:</p>
+      <p>
+        <strong>Email:</strong> <a href="mailto:suporte@exemplo.com">suporte@exemplo.com</a><br />
+        <strong>Telefone:</strong> (00) 12345-6789
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function updateCountdown() {
+      const returnDate = new Date('2025-12-31T00:00:00').getTime();
+      const now = new Date().getTime();
+      const distance = returnDate - now;
+
+      if (distance < 0) {
+        document.getElementById("countdown").innerHTML = "Já voltamos! 😄";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML = `Retorno estimado em: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
 </body>
 </html>
